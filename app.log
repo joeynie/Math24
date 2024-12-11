@@ -1,0 +1,40 @@
+2024-12-11 15:28:35 [INFO] Starting Math24
+2024-12-11 15:28:35 [INFO] Math 24 init
+2024-12-11 15:28:53 [INFO] Starting Math24
+2024-12-11 15:28:53 [INFO] Math 24 init
+2024-12-11 15:31:37 [INFO] Starting Math24
+2024-12-11 15:31:37 [INFO] Math 24 init
+2024-12-11 15:35:03 [INFO] Starting Math24
+2024-12-11 15:35:03 [INFO] Math 24 init
+2024-12-11 15:35:34 [INFO] Starting Math24
+2024-12-11 15:35:34 [INFO] Math 24 init
+2024-12-11 15:35:44 [INFO] Starting Math24
+2024-12-11 15:35:44 [INFO] Math 24 init
+2024-12-11 15:35:49 [INFO] Solving...
+2024-12-11 15:35:49 [INFO] Solved: (2*(5+(3+4)))
+2024-12-11 15:35:52 [INFO] Solving...
+2024-12-11 15:35:52 [INFO] Solved: (10+(1+(6+7)))
+2024-12-11 15:35:57 [INFO] Solving...
+2024-12-11 15:35:57 [INFO] Solved: ((2*(7+10))-10)
+2024-12-11 15:36:01 [INFO] 24.000000
+2024-12-11 15:41:32 [INFO] Starting Math24
+2024-12-11 15:41:32 [INFO] Math 24 init
+2024-12-11 15:41:37 [ERROR] Error: Please enter 4 numbers separated by space.
+2024-12-11 15:41:42 [INFO] Solving...
+2024-12-11 15:41:42 [INFO] Solved: ((6/2)+(3*7))
+2024-12-11 15:41:51 [INFO] Solving...
+2024-12-11 15:41:51 [INFO] Solved: ((4+9)+(10+1))
+2024-12-11 15:41:54 [INFO] 24.000000
+2024-12-11 15:42:54 [INFO] Starting Math24
+2024-12-11 15:42:54 [INFO] Math 24 init
+2024-12-11 15:43:16 [INFO] Starting Math24
+2024-12-11 15:43:16 [INFO] Math 24 init
+2024-12-11 15:44:25 [INFO] Starting Math24
+2024-12-11 15:44:25 [INFO] Math 24 init
+2024-12-11 15:44:31 [INFO] Solving...
+2024-12-11 15:44:31 [INFO] Solved: (12+(8*(3/2)))
+2024-12-11 15:44:34 [INFO] 24.000000
+2024-12-11 15:45:31 [INFO] Starting Math24
+2024-12-11 15:45:31 [INFO] Math 24 init
+2024-12-11 15:45:38 [INFO] Solving...
+2024-12-11 15:45:38 [INFO] Solved: No solution found.

@@ -12,9 +12,6 @@ void Mode0::init()
 	output_result->textsize(20);
 	button_solve = new Fl_Button(width/2,height/2+70, 200, 30, "Solve");
 	button_solve->callback(Mode0::solve_callback, this);
-	// log_display = new Fl_Text_Display(10, 10, width-20, height/2-20, "Log");
-	// log_display->textsize(12);
-	// log_display->textfont(FL_COURIER);
 
 	end();
 }
@@ -43,10 +40,6 @@ void Mode0::solve_callback(Fl_Widget* widget, void* data){
 	window->solver.solve(nums);
 	std::string result = window->solver.getResult();
 	window->output_result->value(result.c_str());
-	// auto buf = new Fl_Text_Buffer();
-	// window->log_display->buffer(buf);
-	// 追加文本
-	// buf->append(result.c_str());
 }
 
 void MyWindow::init()
@@ -58,35 +51,46 @@ void MyWindow::init()
 	begin();
 	modes.emplace_back(new Mode0(0,0,width,height));
 	modes.emplace_back(new Mode1(0,0,width,height));
+	modes.emplace_back(new Mode2(0,0,width,height));
+	modes.emplace_back(new LogPanel(0,0,width,height));
 
-	menu = new Fl_Menu_Window(0, 0, width, height);
+	menu = new Fl_Menu_Window(0, 0, width, height-50);
 	menu->color(fl_rgb_color(255, 255, 255));
 	box_logo = new Fl_Box(width/2-100, height/4, 200, 80, "Math 24");
 	box_logo->box(FL_PLASTIC_UP_BOX);
 	box_logo->color(fl_rgb_color(255, 255, 255));
 	box_logo->labelsize(40);
 	box_logo->labelfont(FL_COURIER);
-	choose_mode.emplace_back(new Fl_Button(width/2-50, height/2+0*50, 100, 30, "Mode 0"));
-	choose_mode.emplace_back(new Fl_Button(width/2-50, height/2+1*50, 100, 30, "Mode 1"));
+	choose_mode.emplace_back(new Fl_Button(width/2-50, height/2+0*50, 100, 30, "Mode 1"));
+	choose_mode.emplace_back(new Fl_Button(width/2-50, height/2+1*50, 100, 30, "Mode 2"));
+	choose_mode.emplace_back(new Fl_Button(width/2-50, height/2+2*50, 100, 30, "Mode 3"));
+	choose_mode.emplace_back(new Fl_Button(width/2-50, height/2+3*50, 100, 30, "Log"));
 	choose_mode[0]->callback(MyWindow::choose_mode_callback, this);	
 	choose_mode[1]->callback(MyWindow::choose_mode_callback, this);
-
+	choose_mode[2]->callback(MyWindow::choose_mode_callback, this);
+	choose_mode[3]->callback(MyWindow::choose_mode_callback, this);
 	menu->end();
 
 	button_return_menu = new Fl_Button(10, height-50, 60, 30, "Return");
 	button_return_menu->callback(MyWindow::return_menu_callback, this);
 	button_return_menu->hide();
+	button_exit = new Fl_Button(10, height-50, 60, 30, "Exit");
+	button_exit->callback(MyWindow::exit_callback, this);
+	button_exit->show();
 	end();
 }
 void MyWindow::choose_mode_callback(Fl_Widget* widget, void* data)
 {
 	MyWindow* window = (MyWindow*)data;
-	std::string name = ((Fl_Button*)widget)->label();
-	int index = std::stoi(name.substr(name.length()-1));
 	window->menu->hide();
+	std::string name = ((Fl_Button*)widget)->label();
+	int index;
+	if(name == "Log")index = 3;
+	else index = std::stoi(name.substr(name.length()-1))-1;
 	
 	window->modes[index]->show();
 	window->button_return_menu->show();
+	window->button_exit->hide();
 	window->current_mode = index;
 }
 void MyWindow::return_menu_callback(Fl_Widget* widget, void* data)
@@ -94,5 +98,10 @@ void MyWindow::return_menu_callback(Fl_Widget* widget, void* data)
 	MyWindow* window = (MyWindow*)data;
 	window->menu->show();
 	window->modes[window->current_mode]->hide();
+	window->button_return_menu->hide();
+	window->button_exit->show();
 }
-
+void MyWindow::exit_callback(Fl_Widget *widget, void *data)
+{
+	exit(0);
+}

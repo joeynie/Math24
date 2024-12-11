@@ -75,6 +75,47 @@ private:
 
 };
 
+class Mode2: public Fl_Group
+{
+public:
+	Mode2(int x, int y, int w, int h) : Fl_Group(x, y, w, h),height(h),width(w)
+	{
+		init();
+		hide();
+	}
+	void init();
+
+private:
+	int height,width;
+	Fl_Image* image;
+	Fl_Input* input_nums;
+	Fl_Button* button_solve;
+	Fl_Output* output_result;
+	Fl_Text_Display* log_display;
+
+	Solver solver;
+	Logger& logger=Logger::getInstance();
+};
+
+class LogPanel: public Fl_Group
+{
+public:
+	LogPanel(int x, int y, int w, int h) : Fl_Group(x, y, w, h),height(h),width(w)
+	{
+		init();
+		hide();
+	}
+	void init();
+	void show();
+
+private:
+	int height,width;
+	Fl_Text_Display* log_display;
+	Logger& logger=Logger::getInstance();
+	Fl_Text_Buffer* log_buffer ;
+	void loadLog();
+};
+
 class MyWindow : public Fl_Window
 {
 public:
@@ -83,13 +124,14 @@ public:
 	void init();
 	static void choose_mode_callback(Fl_Widget* widget, void* data);
 	static void return_menu_callback(Fl_Widget* widget, void* data);
+	static void exit_callback(Fl_Widget* widget, void* data);
 private:
 	int height,width,current_mode;
 	Fl_Group* menu;
 	std::vector<Fl_Group*> modes;
     std::vector<Fl_Button*> choose_mode;
     std::vector<std::string> button_names; 
-	Fl_Button* button_return_menu;
+	Fl_Button* button_return_menu, *button_exit;
 	Fl_Box* box_logo;
 
 	Logger& logger=Logger::getInstance();
