@@ -1,0 +1,221 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "fltk-1.4.0rc3",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-fltk-1.4.0rc3-d1d571e165029d33aa22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "fltk-1.4.0rc3",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "fltk-1.4.0rc3/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-fltk-1.4.0rc3.src-e15bfc135314cd5a85ee.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "fltk-1.4.0rc3/src",
+					"targetIndexes" : 
+					[
+						1,
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "fltk-1.4.0rc3/fluid",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-fltk-1.4.0rc3.fluid-13a05ed0b72237a9a996.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "fltk-1.4.0rc3/fluid",
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				},
+				{
+					"build" : "fltk-1.4.0rc3/fltk-options",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-fltk-1.4.0rc3.fltk-options-567a3a79c26becce9b15.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "fltk-1.4.0rc3/fltk-options",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Math24",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "FLTK",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Math24::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Math24-971a869e9fec53f5aecc.json",
+					"name" : "Math24",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "fltk::@54e8d1b0c5c3f3a32b2a",
+					"jsonFile" : "target-fltk-5fcd86067811663b995e.json",
+					"name" : "fltk",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "fltk-options::@9c68edf582dea6b632eb",
+					"jsonFile" : "target-fltk-options-4dc7c7da5f3e7ef96bab.json",
+					"name" : "fltk-options",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "fltk_forms::@54e8d1b0c5c3f3a32b2a",
+					"jsonFile" : "target-fltk_forms-dbf05f0dea988f6ffa59.json",
+					"name" : "fltk_forms",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "fltk_gl::@54e8d1b0c5c3f3a32b2a",
+					"jsonFile" : "target-fltk_gl-7d4ab559a8493a2bd622.json",
+					"name" : "fltk_gl",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "fltk_images::@54e8d1b0c5c3f3a32b2a",
+					"jsonFile" : "target-fltk_images-df8745a951adb09a4f15.json",
+					"name" : "fltk_images",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "fluid::@303594e0e160714faf1a",
+					"jsonFile" : "target-fluid-825322cc01d55231dddb.json",
+					"name" : "fluid",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "fluid-lib::@303594e0e160714faf1a",
+					"jsonFile" : "target-fluid-lib-cc608b9d8b7536eb5abb.json",
+					"name" : "fluid-lib",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "uninstall::@e29846777c89b8869407",
+					"jsonFile" : "target-uninstall-8b7d05a07c94c066b35d.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/joe/Desktop/Workspace/Math24/build",
+		"source" : "/home/joe/Desktop/Workspace/Math24"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -1,0 +1,153 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"fltk-1.4.0rc3/fltk-options/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 95,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 106,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 110,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 116,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 116,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 116,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 116,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"fltk-1.4.0rc3/bin/fltk-options"
+			],
+			"targetId" : "fltk-options::@9c68edf582dea6b632eb",
+			"targetIndex" : 2,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "share/applications",
+			"paths" : 
+			[
+				"fltk-1.4.0rc3/fltk-options/fltk-options.desktop"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "share/mime/packages",
+			"paths" : 
+			[
+				"fltk-1.4.0rc3/fltk-options/fltk-options.xml"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "share/icons/hicolor/32x32/apps",
+			"paths" : 
+			[
+				{
+					"from" : "fltk-1.4.0rc3/fltk-options/icons/fltk-options-32.png",
+					"to" : "fltk-options.png"
+				}
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "share/icons/hicolor/48x48/apps",
+			"paths" : 
+			[
+				{
+					"from" : "fltk-1.4.0rc3/fltk-options/icons/fltk-options-48.png",
+					"to" : "fltk-options.png"
+				}
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "share/icons/hicolor/64x64/apps",
+			"paths" : 
+			[
+				{
+					"from" : "fltk-1.4.0rc3/fltk-options/icons/fltk-options-64.png",
+					"to" : "fltk-options.png"
+				}
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "share/icons/hicolor/128x128/apps",
+			"paths" : 
+			[
+				{
+					"from" : "fltk-1.4.0rc3/fltk-options/icons/fltk-options-128.png",
+					"to" : "fltk-options.png"
+				}
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "fltk-1.4.0rc3/fltk-options",
+		"source" : "fltk-1.4.0rc3/fltk-options"
+	}
+}
