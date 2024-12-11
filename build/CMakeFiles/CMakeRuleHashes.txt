@@ -1,6 +1,0 @@
-# Hashes of file build rules.
-3f7ab9fec6326b70cc56b4c8f74be939 fltk-1.4.0rc3/CMakeFiles/uninstall
-5f63fbd656274bb89f1e60707de4e3ab fltk-1.4.0rc3/src/gtk-shell-protocol.c
-77892bf050337bb06af473290b93b1bd fltk-1.4.0rc3/src/text-input-protocol.c
-0cc59e6a8aac1556f3d434e01e2d741f fltk-1.4.0rc3/src/xdg-decoration-protocol.c
-4db250ad2556959c34333430dfbdf57b fltk-1.4.0rc3/src/xdg-shell-protocol.c
