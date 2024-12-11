@@ -17,5 +17,5 @@ add_executable(${PROJECT_NAME} ${SRC})
 # both win and linux use the same lib name
 target_link_libraries(${PROJECT_NAME}
     fltk
-    pthread
+    fltk_images
 )

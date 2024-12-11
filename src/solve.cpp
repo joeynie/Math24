@@ -1,5 +1,6 @@
 #include "solve.hpp"
 #include <algorithm>
+#include <iostream>
 
 bool Solver::solve(std::vector<float>& nums)
 {
@@ -7,12 +8,19 @@ bool Solver::solve(std::vector<float>& nums)
     expressions.clear();
     results.clear();
     for(auto& num : nums) expressions.emplace_back(std::to_string((int)num));
+    start_time = std::chrono::high_resolution_clock::now();
     solve(nums,expressions);
     getBestExpression();
     logger.log("Solved: " + getResult());
+    get_time();
     return !results.empty();
 }
-
+void Solver::get_time()
+{
+    auto now = std::chrono::high_resolution_clock::now();
+    std::cout << "Time used: " << std::chrono::duration_cast<std::chrono::microseconds>(now - start_time).count() << " ns" << std::endl;
+}
+//dfs
 void Solver::solve(std::vector<float>& nums,std::vector<std::string>& expression)
 {
     int n = nums.size();
@@ -35,6 +43,7 @@ void Solver::solve(std::vector<float>& nums,std::vector<std::string>& expression
                 if(next.size() == 1){
                     if(std::abs(next[0] - goal) < 1e-6){
                         results.emplace_back(next_exp[0]);
+                        get_time();
                     }
                 }
                 if(next.size() > 1) solve(next,next_exp);
@@ -64,6 +73,6 @@ void Solver::getBestExpression()
 
 std::string Solver::getResult()
 {
-    if(results.empty()) return "No solution found.";
+    if(results.empty()) return "No solution.";
     else return results[0];
 }

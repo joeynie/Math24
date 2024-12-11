@@ -3,7 +3,7 @@
 
 #include <vector>
 #include "logger.hpp"
-
+#include <chrono>
 class Solver {
 private:
     Logger& logger = Logger::getInstance();
@@ -29,8 +29,10 @@ private:
     void getBestExpression();
 public:
     // Solver();
-    bool solve(std::vector<float>& numbers);
     void solve(std::vector<float>& numbers, std::vector<std::string>& expression);
+    bool solve(std::vector<float>& numbers);
+    std::chrono::time_point<std::chrono::system_clock> start_time;
+    void get_time();
     std::string getResult();
     const float goal = 24;
 };

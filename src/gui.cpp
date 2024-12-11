@@ -1,16 +1,21 @@
 #include "gui.hpp"
 
-
+//玩家出题
 void Mode0::init()
 {
 	begin();
-	input_nums = new Fl_Input(width/2,height/2, 200, 30, "Enter numbers separated by space:");
-	input_nums->textsize(20);
+	image = new Fl_PNG_Image("../images/nap.png");
+	box_image = new Fl_Box(10,10,image->w(),image->h());
+	box_image->box(FL_NO_BOX);
+	box_image->image(image);
 
-	output_result = new Fl_Output(width/2,height/2+30, 200, 30, "Result:");
+	input_nums = new Fl_Input(w()/2-100,h()/2-100, 200, 50, "4 numbers:");
+	input_nums->textsize(30);
+
+	output_result = new Fl_Output(w()/2-100,h()/2-40, 200, 50, "Result:");
 	output_result->textfont(FL_HELVETICA_BOLD);
-	output_result->textsize(20);
-	button_solve = new Fl_Button(width/2,height/2+70, 200, 30, "Solve");
+	output_result->textsize(24);
+	button_solve = new MyButton(w()/2-100,h()/2+20, 200, 50, "Solve");
 	button_solve->callback(Mode0::solve_callback, this);
 
 	end();
@@ -45,49 +50,59 @@ void Mode0::solve_callback(Fl_Widget* widget, void* data){
 void MyWindow::init()
 {
 	logger.log("Math 24 init");
-	color(fl_rgb_color(255, 255, 255));
+	color(color_bg);
 	 Fl::scheme("");
 	current_mode = -1;
 	begin();
-	modes.emplace_back(new Mode0(0,0,width,height));
-	modes.emplace_back(new Mode1(0,0,width,height));
-	modes.emplace_back(new Mode2(0,0,width,height));
-	modes.emplace_back(new LogPanel(0,0,width,height));
 
-	menu = new Fl_Menu_Window(0, 0, width, height-50);
-	menu->color(fl_rgb_color(255, 255, 255));
-	box_logo = new Fl_Box(width/2-100, height/4, 200, 80, "Math 24");
-	box_logo->box(FL_PLASTIC_UP_BOX);
-	box_logo->color(fl_rgb_color(255, 255, 255));
+	modes.emplace_back(new Mode0(0,0,w(),h()));
+	modes.emplace_back(new Mode1(0,0,w(),h()));
+	modes.emplace_back(new Mode2(0,0,w(),h()));
+	modes.emplace_back(new LogPanel(0,0,w(),h()));
+
+	menu = new Fl_Menu_Window(0, 0, w(), h()-50);
+	menu->color(color_bg);
+	box_logo = new Fl_Box(w()/2-100, h()/2-100, 200, 80, "Math 24");
+	box_logo->box(FL_NO_BOX);
+	box_logo->color(color_bg);
 	box_logo->labelsize(40);
 	box_logo->labelfont(FL_COURIER);
-	choose_mode.emplace_back(new Fl_Button(width/2-50, height/2+0*50, 100, 30, "Mode 1"));
-	choose_mode.emplace_back(new Fl_Button(width/2-50, height/2+1*50, 100, 30, "Mode 2"));
-	choose_mode.emplace_back(new Fl_Button(width/2-50, height/2+2*50, 100, 30, "Mode 3"));
-	choose_mode.emplace_back(new Fl_Button(width/2-50, height/2+3*50, 100, 30, "Log"));
-	choose_mode[0]->callback(MyWindow::choose_mode_callback, this);	
-	choose_mode[1]->callback(MyWindow::choose_mode_callback, this);
-	choose_mode[2]->callback(MyWindow::choose_mode_callback, this);
-	choose_mode[3]->callback(MyWindow::choose_mode_callback, this);
+
+	image = new Fl_PNG_Image("../images/logo.png");
+	box_image = new Fl_Box(10,10,image->w(),image->h());
+	box_image->box(FL_NO_BOX);
+	box_image->image(image);
+
+	int ww = 150, hh = 40;
+	choose_mode.emplace_back(new MyButton(w()/2-ww/2, h()/2+0*50, ww, hh, "人机解题"));
+	choose_mode.emplace_back(new MyButton(w()/2-ww/2, h()/2+1*50, ww, hh, "限时挑战"));
+	choose_mode.emplace_back(new MyButton(w()/2-ww/2, h()/2+2*50, ww, hh, "竞速挑战"));
+	choose_mode.emplace_back(new MyButton(w()/2-ww/2, h()/2+3*50, ww, hh, "日志"));
+	for(auto mode : choose_mode)	mode->callback(MyWindow::choose_mode_callback, this);	
+
 	menu->end();
 
-	button_return_menu = new Fl_Button(10, height-50, 60, 30, "Return");
+	button_return_menu = new MyButton(10, h()-50, 60, 30, "Return");
 	button_return_menu->callback(MyWindow::return_menu_callback, this);
 	button_return_menu->hide();
-	button_exit = new Fl_Button(10, height-50, 60, 30, "Exit");
+	button_exit = new MyButton(10, h()-50, 60, 30, "Exit");
 	button_exit->callback(MyWindow::exit_callback, this);
 	button_exit->show();
 	end();
 }
+std::unordered_map<std::string, int> MyWindow::button_names = {
+	{"人机解题",0},
+	{"限时挑战",1},
+	{"竞速挑战",2},
+	{"日志",3}
+};
 void MyWindow::choose_mode_callback(Fl_Widget* widget, void* data)
 {
 	MyWindow* window = (MyWindow*)data;
 	window->menu->hide();
 	std::string name = ((Fl_Button*)widget)->label();
-	int index;
-	if(name == "Log")index = 3;
-	else index = std::stoi(name.substr(name.length()-1))-1;
-	
+	int index = button_names.find(name)->second;
+
 	window->modes[index]->show();
 	window->button_return_menu->show();
 	window->button_exit->hide();

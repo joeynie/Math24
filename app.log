@@ -1,40 +1,304 @@
-2024-12-11 15:28:35 [INFO] Starting Math24
-2024-12-11 15:28:35 [INFO] Math 24 init
-2024-12-11 15:28:53 [INFO] Starting Math24
-2024-12-11 15:28:53 [INFO] Math 24 init
-2024-12-11 15:31:37 [INFO] Starting Math24
-2024-12-11 15:31:37 [INFO] Math 24 init
-2024-12-11 15:35:03 [INFO] Starting Math24
-2024-12-11 15:35:03 [INFO] Math 24 init
-2024-12-11 15:35:34 [INFO] Starting Math24
-2024-12-11 15:35:34 [INFO] Math 24 init
-2024-12-11 15:35:44 [INFO] Starting Math24
-2024-12-11 15:35:44 [INFO] Math 24 init
-2024-12-11 15:35:49 [INFO] Solving...
-2024-12-11 15:35:49 [INFO] Solved: (2*(5+(3+4)))
-2024-12-11 15:35:52 [INFO] Solving...
-2024-12-11 15:35:52 [INFO] Solved: (10+(1+(6+7)))
-2024-12-11 15:35:57 [INFO] Solving...
-2024-12-11 15:35:57 [INFO] Solved: ((2*(7+10))-10)
-2024-12-11 15:36:01 [INFO] 24.000000
-2024-12-11 15:41:32 [INFO] Starting Math24
-2024-12-11 15:41:32 [INFO] Math 24 init
-2024-12-11 15:41:37 [ERROR] Error: Please enter 4 numbers separated by space.
-2024-12-11 15:41:42 [INFO] Solving...
-2024-12-11 15:41:42 [INFO] Solved: ((6/2)+(3*7))
-2024-12-11 15:41:51 [INFO] Solving...
-2024-12-11 15:41:51 [INFO] Solved: ((4+9)+(10+1))
-2024-12-11 15:41:54 [INFO] 24.000000
-2024-12-11 15:42:54 [INFO] Starting Math24
-2024-12-11 15:42:54 [INFO] Math 24 init
-2024-12-11 15:43:16 [INFO] Starting Math24
-2024-12-11 15:43:16 [INFO] Math 24 init
-2024-12-11 15:44:25 [INFO] Starting Math24
-2024-12-11 15:44:25 [INFO] Math 24 init
-2024-12-11 15:44:31 [INFO] Solving...
-2024-12-11 15:44:31 [INFO] Solved: (12+(8*(3/2)))
-2024-12-11 15:44:34 [INFO] 24.000000
-2024-12-11 15:45:31 [INFO] Starting Math24
-2024-12-11 15:45:31 [INFO] Math 24 init
-2024-12-11 15:45:38 [INFO] Solving...
-2024-12-11 15:45:38 [INFO] Solved: No solution found.
+2024-12-12 00:45:45 [INFO] Math 24 init
+2024-12-12 00:46:56 [INFO] Math 24 init
+2024-12-12 00:46:59 [INFO] Solving...
+2024-12-12 00:46:59 [INFO] Solved: ((12*1)*(12-10))
+2024-12-12 00:47:03 [INFO] 24 Correct!
+2024-12-12 00:47:11 [INFO] Solving...
+2024-12-12 00:47:11 [INFO] Solved: No solution found.
+2024-12-12 00:47:25 [INFO] 1+2+20Incorrect.
+2024-12-12 00:47:41 [INFO] Solving...
+2024-12-12 00:47:41 [INFO] Solved: (8*(10-(2+5)))
+2024-12-12 00:47:48 [INFO] Solving...
+2024-12-12 00:47:48 [INFO] Solved: (12+((11+13)/2))
+2024-12-12 00:47:51 [INFO] Incorrect.
+2024-12-12 00:47:54 [INFO] 24 Correct!
+2024-12-12 00:47:54 [INFO] Solving...
+2024-12-12 00:47:54 [INFO] Solved: ((12+11)+(10-9))
+2024-12-12 00:47:56 [INFO] Incorrect.
+2024-12-12 00:47:57 [INFO] Incorrect.
+2024-12-12 00:47:57 [INFO] Incorrect.
+2024-12-12 00:47:58 [INFO] Incorrect.
+2024-12-12 00:47:59 [INFO] 24 Correct!
+2024-12-12 00:48:00 [INFO] Solving...
+2024-12-12 00:48:00 [INFO] Solved: (8*(7-(3+1)))
+2024-12-12 00:48:00 [INFO] Incorrect.
+2024-12-12 00:48:02 [INFO] 24 Correct!
+2024-12-12 00:48:02 [INFO] Solving...
+2024-12-12 00:48:02 [INFO] Solved: ((1+1)*(1*12))
+2024-12-12 00:48:03 [INFO] Incorrect.
+2024-12-12 00:48:04 [INFO] 24 Correct!
+2024-12-12 00:48:05 [INFO] Solving...
+2024-12-12 00:48:05 [INFO] Solved: No solution found.
+2024-12-12 00:48:05 [INFO] Incorrect.
+2024-12-12 00:48:07 [INFO] 24 Correct!
+2024-12-12 00:48:07 [INFO] Solving...
+2024-12-12 00:48:07 [INFO] Solved: ((11*2)+(11-9))
+2024-12-12 00:48:08 [INFO] Incorrect.
+2024-12-12 00:48:09 [INFO] 24 Correct!
+2024-12-12 00:48:10 [INFO] Solving...
+2024-12-12 00:48:10 [INFO] Solved: (6*(3+(12/12)))
+2024-12-12 00:48:10 [INFO] Incorrect.
+2024-12-12 00:48:11 [INFO] 24 Correct!
+2024-12-12 00:48:12 [INFO] Solving...
+2024-12-12 00:48:12 [INFO] Solved: ((2+4)*(5-1))
+2024-12-12 00:48:13 [INFO] Incorrect.
+2024-12-12 00:48:14 [INFO] 24 Correct!
+2024-12-12 00:48:14 [INFO] 24 Correct!
+2024-12-12 00:48:15 [INFO] Solving...
+2024-12-12 00:48:15 [INFO] Solved: (12*(3+(5-6)))
+2024-12-12 00:48:16 [INFO] Incorrect.
+2024-12-12 00:48:17 [INFO] 24 Correct!
+2024-12-12 00:48:18 [INFO] Solving...
+2024-12-12 00:48:18 [INFO] Solved: ((5+7)*(1+1))
+2024-12-12 00:48:18 [INFO] Incorrect.
+2024-12-12 00:48:21 [INFO] 24 Correct!
+2024-12-12 00:48:22 [INFO] Solving...
+2024-12-12 00:48:22 [INFO] Solved: (4+(4*(4+1)))
+2024-12-12 00:48:24 [INFO] Incorrect.
+2024-12-12 00:48:28 [INFO] 24 Correct!
+2024-12-12 00:48:30 [INFO] Solving...
+2024-12-12 00:48:30 [INFO] Solved: (2*(5+(4+3)))
+2024-12-12 00:50:05 [INFO] Math 24 init
+2024-12-12 00:50:07 [INFO] Solving...
+2024-12-12 00:50:07 [INFO] Solved: ((5*(10-5))-1)
+2024-12-12 00:50:09 [INFO] Incorrect.
+2024-12-12 00:50:11 [INFO] 24 Correct!
+2024-12-12 00:50:12 [INFO] Solving...
+2024-12-12 00:50:12 [INFO] Solved: (12*(10-(7+1)))
+2024-12-12 00:50:13 [INFO] Incorrect.
+2024-12-12 00:50:14 [INFO] 24 Correct!
+2024-12-12 00:50:15 [INFO] Solving...
+2024-12-12 00:50:15 [INFO] Solved: ((8/4)+(2*11))
+2024-12-12 00:50:16 [INFO] 24 Correct!
+2024-12-12 00:50:17 [INFO] Solving...
+2024-12-12 00:50:17 [INFO] Solved: No solution found.
+2024-12-12 00:50:26 [INFO] Incorrect.
+2024-12-12 00:50:28 [INFO] 24 Correct!
+2024-12-12 00:50:28 [INFO] Solving...
+2024-12-12 00:50:28 [INFO] Solved: No solution found.
+2024-12-12 00:50:51 [INFO] 1+2-20+2Incorrect.
+2024-12-12 00:51:01 [INFO] Solving...
+2024-12-12 00:51:01 [INFO] Solved: No solution found.
+2024-12-12 00:52:51 [INFO] Math 24 init
+2024-12-12 00:52:53 [INFO] Solving...
+2024-12-12 00:52:53 [INFO] Solved: No solution.
+2024-12-12 00:52:53 [INFO] Solving...
+2024-12-12 00:52:53 [INFO] Solved: ((8-6)+(2*11))
+2024-12-12 00:52:55 [INFO] Incorrect.
+2024-12-12 00:52:59 [INFO] 24 Correct!
+2024-12-12 00:53:00 [INFO] Solving...
+2024-12-12 00:53:00 [INFO] Solved: No solution.
+2024-12-12 00:53:00 [INFO] Solving...
+2024-12-12 00:53:00 [INFO] Solved: ((2*10)+(13-9))
+2024-12-12 00:53:01 [INFO] Incorrect.
+2024-12-12 00:53:03 [INFO] 24 Correct!
+2024-12-12 00:53:03 [INFO] Solving...
+2024-12-12 00:53:03 [INFO] Solved: (10+(11+(11-8)))
+2024-12-12 00:53:09 [INFO] 24 Correct!
+2024-12-12 00:53:10 [INFO] Solving...
+2024-12-12 00:53:10 [INFO] Solved: ((3+5)*(2+1))
+2024-12-12 00:53:12 [INFO] 24 Correct!
+2024-12-12 00:53:13 [INFO] Solving...
+2024-12-12 00:53:13 [INFO] Solved: No solution.
+2024-12-12 00:53:13 [INFO] Solving...
+2024-12-12 00:53:13 [INFO] Solved: No solution.
+2024-12-12 00:53:13 [INFO] Solving...
+2024-12-12 00:53:13 [INFO] Solved: ((10+(3*7))-7)
+2024-12-12 00:53:22 [INFO] 24 Correct!
+2024-12-12 00:53:25 [INFO] Solving...
+2024-12-12 00:53:25 [INFO] Solved: ((11+12)+(7/7))
+2024-12-12 00:53:28 [INFO] 24 Correct!
+2024-12-12 00:53:31 [INFO] Solving...
+2024-12-12 00:53:31 [INFO] Solved: (3+(12+(13-4)))
+2024-12-12 00:53:34 [INFO] 24 Correct!
+2024-12-12 00:53:39 [INFO] Solving...
+2024-12-12 00:53:39 [INFO] Solved: ((9/3)+(12+9))
+2024-12-12 00:53:46 [INFO] 24 Correct!
+2024-12-12 00:53:48 [INFO] Solving...
+2024-12-12 00:53:48 [INFO] Solved: ((7*5)-(2+9))
+2024-12-12 00:53:50 [INFO] 24 Correct!
+2024-12-12 00:53:52 [INFO] Solving...
+2024-12-12 00:53:52 [INFO] Solved: No solution.
+2024-12-12 00:53:52 [INFO] Solving...
+2024-12-12 00:53:52 [INFO] Solved: ((5+1)*(7-3))
+2024-12-12 00:55:41 [INFO] Math 24 init
+2024-12-12 00:55:45 [INFO] Solving...
+2024-12-12 00:55:45 [INFO] Solved: (6*(3+(10-9)))
+2024-12-12 00:55:50 [INFO] 1 2 3 4 Incorrect.
+2024-12-12 00:56:02 [INFO] 1+2+3+4Incorrect.
+2024-12-12 00:56:42 [INFO] Math 24 init
+2024-12-12 00:56:45 [INFO] Incorrect.
+2024-12-12 00:56:49 [INFO] 1 2 3 4Incorrect.
+2024-12-12 00:56:54 [INFO] 1 2 3 4 5Incorrect.
+2024-12-12 00:57:52 [INFO] Math 24 init
+2024-12-12 00:57:56 [INFO] 1 2 3 4Incorrect.
+2024-12-12 00:58:28 [INFO] Math 24 init
+2024-12-12 00:58:39 [INFO] (1+2)*3-5Incorrect.
+2024-12-12 00:58:41 [INFO] Solving...
+2024-12-12 00:58:41 [INFO] Solved: No solution.
+2024-12-12 00:58:41 [INFO] Solving...
+2024-12-12 00:58:41 [INFO] Solved: (6*((8*1)-4))
+2024-12-12 00:58:45 [INFO] 8 6 1 4Incorrect.
+2024-12-12 00:58:57 [INFO] (2-5)*1+5Incorrect.
+2024-12-12 01:05:20 [INFO] Math 24 init
+2024-12-12 01:05:49 [INFO] Math 24 init
+2024-12-12 01:05:51 [INFO] Solving...
+2024-12-12 01:05:51 [INFO] Solved: No solution.
+2024-12-12 01:05:51 [INFO] Solving...
+2024-12-12 01:05:51 [INFO] Solved: (8*(1*(10-7)))
+2024-12-12 01:05:54 [INFO] 1 7 10 8Incorrect.
+2024-12-12 01:06:20 [INFO] Math 24 init
+2024-12-12 01:06:22 [INFO] Solving...
+2024-12-12 01:06:22 [INFO] Solved: (12+((2*8)-4))
+2024-12-12 01:06:34 [INFO] 4+12+2+8Incorrect.
+2024-12-12 01:06:44 [INFO] 2-12-2-8Invalid input.
+2024-12-12 01:06:56 [INFO] Solving...
+2024-12-12 01:06:56 [INFO] Solved: ((6+(9*3))-9)
+2024-12-12 01:07:06 [INFO] 9+9+9+3Invalid input.
+2024-12-12 01:07:16 [INFO] 9+9+6+3Incorrect.
+2024-12-12 01:07:23 [INFO] 2Invalid input.
+2024-12-12 01:07:27 [INFO] Solving...
+2024-12-12 01:07:27 [INFO] Solved: ((10/5)+(9+13))
+2024-12-12 01:07:29 [INFO] 3Invalid input.
+2024-12-12 01:07:32 [INFO] 3+10Invalid input.
+2024-12-12 01:07:35 [INFO] 3+10-1Invalid input.
+2024-12-12 01:07:37 [INFO] 24Invalid input.
+2024-12-12 01:07:39 [INFO] 20Invalid input.
+2024-12-12 01:20:00 [INFO] Math 24 init
+2024-12-12 01:20:02 [INFO] Solving...
+2024-12-12 01:20:02 [INFO] Solved: ((9-3)+(9+9))
+2024-12-12 01:20:08 [INFO] 1+2+3+9Invalid input.
+2024-12-12 01:20:16 [INFO] 9 9 3 9Incorrect.
+2024-12-12 01:20:23 [INFO] 9 9 9 9Invalid input.
+2024-12-12 01:20:27 [INFO] 3 9 9 9Incorrect.
+2024-12-12 01:20:28 [INFO] 1Invalid input.
+2024-12-12 01:20:29 [INFO] 24Invalid input.
+2024-12-12 01:20:30 [INFO] 2Invalid input.
+2024-12-12 01:20:32 [INFO] 0Invalid input.
+2024-12-12 01:20:35 [INFO] Invalid input.
+2024-12-12 01:20:39 [INFO] Solving...
+2024-12-12 01:20:39 [INFO] Solved: ((9*3)+(2-5))
+2024-12-12 01:20:40 [INFO] Invalid input.
+2024-12-12 01:20:45 [INFO] 1Invalid input.
+2024-12-12 01:36:22 [INFO] Math 24 init
+2024-12-12 01:37:59 [INFO] Math 24 init
+2024-12-12 01:38:16 [INFO] Math 24 init
+2024-12-12 01:42:04 [INFO] Math 24 init
+2024-12-12 01:42:22 [INFO] Math 24 init
+2024-12-12 01:42:57 [INFO] Math 24 init
+2024-12-12 02:10:31 [INFO] Math 24 init
+2024-12-12 02:10:36 [INFO] Solving...
+2024-12-12 02:10:36 [INFO] Solved: (2*(5+(3+4)))
+2024-12-12 02:10:45 [INFO] Math 24 init
+2024-12-12 02:10:47 [INFO] Solving...
+2024-12-12 02:10:47 [INFO] Solved: ((13-5)+(12+4))
+2024-12-12 02:10:51 [INFO] Invalid input.
+2024-12-12 02:10:53 [INFO] Q K 5 4Incorrect.
+2024-12-12 02:11:01 [INFO] Q K 5 Invalid input.
+2024-12-12 02:11:12 [INFO] Math 24 init
+2024-12-12 02:11:17 [INFO] Math 24 init
+2024-12-12 02:11:24 [INFO] Math 24 init
+2024-12-12 02:12:04 [INFO] Math 24 init
+2024-12-12 02:13:17 [INFO] Math 24 init
+2024-12-12 02:13:19 [INFO] Solving...
+2024-12-12 02:13:19 [INFO] Solved: ((6+5)+(4+9))
+2024-12-12 02:14:11 [INFO] Math 24 init
+2024-12-12 02:14:13 [INFO] Solving...
+2024-12-12 02:14:13 [INFO] Solved: (4*((6*4)/4))
+2024-12-12 02:15:02 [INFO] Math 24 init
+2024-12-12 02:15:05 [INFO] Solving...
+2024-12-12 02:15:05 [INFO] Solved: ((2*4)*(12-9))
+2024-12-12 02:15:11 [INFO] 2 4 Q 9Incorrect.
+2024-12-12 02:15:15 [INFO] 1 2 3 4Invalid input.
+2024-12-12 02:15:34 [INFO] Math 24 init
+2024-12-12 02:15:36 [INFO] Solving...
+2024-12-12 02:15:36 [INFO] Solved: (12+(2*(11-5)))
+2024-12-12 02:15:40 [INFO] (12+(2*(11-5))) Correct!
+2024-12-12 02:15:41 [INFO] Solving...
+2024-12-12 02:15:41 [INFO] Solved: No solution.
+2024-12-12 02:15:41 [INFO] Solving...
+2024-12-12 02:15:41 [INFO] Solved: No solution.
+2024-12-12 02:15:41 [INFO] Solving...
+2024-12-12 02:15:41 [INFO] Solved: (7+((5+13)-1))
+2024-12-12 02:15:54 [INFO] (7+((5+K)-1))Incorrect.
+2024-12-12 02:17:10 [INFO] Math 24 init
+2024-12-12 02:17:13 [INFO] Solving...
+2024-12-12 02:17:13 [INFO] Solved: ((6-9)*(2-10))
+2024-12-12 02:17:20 [INFO] ((6-9)*(2-10)) Correct!
+2024-12-12 02:17:21 [INFO] Solving...
+2024-12-12 02:17:21 [INFO] Solved: (4*(10+(7-11)))
+2024-12-12 02:17:26 [INFO] (4*(10+(7-11))) Correct!
+2024-12-12 02:17:27 [INFO] Solving...
+2024-12-12 02:17:27 [INFO] Solved: No solution.
+2024-12-12 02:17:27 [INFO] Solving...
+2024-12-12 02:17:27 [INFO] Solved: ((6+2)*(10-7))
+2024-12-12 02:17:31 [INFO] ((6+2)*(10-7)) Correct!
+2024-12-12 02:17:34 [INFO] Solving...
+2024-12-12 02:17:34 [INFO] Solved: ((9+(7*9))/3)
+2024-12-12 02:17:39 [INFO] ((9+(7*9))/3) Correct!
+2024-12-12 02:17:41 [INFO] Solving...
+2024-12-12 02:17:41 [INFO] Solved: ((8/4)+(11*2))
+2024-12-12 02:17:46 [INFO]  ((8/4)+(11*2)) Correct!
+2024-12-12 02:17:47 [INFO] Solving...
+2024-12-12 02:17:47 [INFO] Solved: (10+(2*(6+1)))
+2024-12-12 02:17:55 [INFO] Solving...
+2024-12-12 02:17:55 [INFO] Solved: ((12/7)*(5+9))
+2024-12-12 02:19:57 [INFO] Math 24 init
+2024-12-12 02:20:00 [INFO] Solving...
+2024-12-12 02:20:00 [INFO] Solved: No solution.
+2024-12-12 02:20:00 [INFO] Solving...
+2024-12-12 02:20:00 [INFO] Solved: (5+(8+(7+4)))
+2024-12-12 02:20:06 [INFO] (5+(8+(7+4))) Correct!
+2024-12-12 02:20:06 [INFO] Solving...
+2024-12-12 02:20:06 [INFO] Solved: ((5*5)+(8-9))
+2024-12-12 02:20:14 [INFO] ((5*5)+(8-9)) Correct!
+2024-12-12 02:20:14 [INFO] Solving...
+2024-12-12 02:20:14 [INFO] Solved: (4*(7+(4-5)))
+2024-12-12 02:20:19 [INFO]  (4*(7+(4-5))) Correct!
+2024-12-12 02:20:19 [INFO] Solving...
+2024-12-12 02:20:19 [INFO] Solved: ((7+11)*(12/9))
+2024-12-12 02:20:25 [INFO]  ((7+11)*(12/9)) Correct!
+2024-12-12 02:20:25 [INFO] Solving...
+2024-12-12 02:20:25 [INFO] Solved: ((2*7)+(11-1))
+2024-12-12 02:20:29 [INFO] ((2*7)+(11-1)) Correct!
+2024-12-12 02:20:29 [INFO] Solving...
+2024-12-12 02:20:29 [INFO] Solved: (1*(8*(5-2)))
+2024-12-12 02:20:32 [INFO] (1*(8*(5-2))) Correct!
+2024-12-12 02:20:32 [INFO] Solving...
+2024-12-12 02:20:32 [INFO] Solved: (9*(2+(4/6)))
+2024-12-12 02:20:37 [INFO] (9*(2+(4/6))) Correct!
+2024-12-12 02:20:37 [INFO] Solving...
+2024-12-12 02:20:37 [INFO] Solved: No solution.
+2024-12-12 02:20:37 [INFO] Solving...
+2024-12-12 02:20:37 [INFO] Solved: ((2*(8+7))-6)
+2024-12-12 02:20:42 [INFO]  ((2*(8+7))-6) Correct!
+2024-12-12 02:20:42 [INFO] Solving...
+2024-12-12 02:20:42 [INFO] Solved: ((10-13)+(3*9))
+2024-12-12 02:20:46 [INFO] Solving...
+2024-12-12 02:20:46 [INFO] Solved: No solution.
+2024-12-12 02:20:46 [INFO] Solving...
+2024-12-12 02:20:46 [INFO] Solved: (8*(13*(3/13)))
+2024-12-12 02:21:38 [INFO] Math 24 init
+2024-12-12 02:21:41 [INFO] Solving...
+2024-12-12 02:21:41 [INFO] Solved: (4*(1*(7-1)))
+2024-12-12 02:21:49 [INFO]  (4*(1*(7-1))) Correct!
+2024-12-12 02:21:49 [INFO] Solving...
+2024-12-12 02:21:49 [INFO] Solved: ((13+5)+(9-3))
+2024-12-12 02:22:27 [INFO] Math 24 init
+2024-12-12 02:22:31 [INFO] Math 24 init
+2024-12-12 02:22:34 [INFO] Solving...
+2024-12-12 02:22:34 [INFO] Solved: (9+(12+(4-1)))
+2024-12-12 02:22:40 [INFO] (9+(12+(4-1))) Correct!
+2024-12-12 02:22:40 [INFO] Solving...
+2024-12-12 02:22:40 [INFO] Solved: ((6+11)+(9-2))
+2024-12-12 02:22:53 [INFO] ((6+11)+(9-2)) Correct!
+2024-12-12 02:22:53 [INFO] Solving...
+2024-12-12 02:22:53 [INFO] Solved: ((9*5)-(11+10))
+2024-12-12 02:23:59 [INFO] Math 24 init
+2024-12-12 02:24:01 [INFO] Solving...
+2024-12-12 02:24:01 [INFO] Solved: No solution.
+2024-12-12 02:24:01 [INFO] Solving...
+2024-12-12 02:24:01 [INFO] Solved: (8*(4+(4-5)))
+2024-12-12 02:24:05 [INFO]  (8*(4+(4-5))) Correct!
+2024-12-12 02:24:05 [INFO] Solving...
+2024-12-12 02:24:05 [INFO] Solved: ((5*4)+(13-9))

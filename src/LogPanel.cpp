@@ -3,7 +3,7 @@
 void LogPanel::init()
 {
 	begin();
-	log_display = new Fl_Text_Display(10,10,width-20,height-60);
+	log_display = new Fl_Text_Display(10,10,w()-20,h()-60);
 	log_buffer = new Fl_Text_Buffer();
 	log_display->buffer(log_buffer);
 	log_display->textsize(12);
