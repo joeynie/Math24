@@ -10,8 +10,9 @@ void Mode1::init()
 	box_image->box(FL_NO_BOX);
 	box_image->image(image);
 
-	nums = new Fl_Output(w()/2-100,h()/2, 200, 30, "Numbers");
-	nums->textsize(20);
+	for(int i = 0; i < 4; i++){
+		boxs_question.emplace_back(new MyButton(80+i%2*w()/3, 120 + i/2 * 150, 170, 170,"",2));
+	}
 	button_random = new MyButton(w()/2-100,h()/2+70, 200, 30, "Check answer");
 	button_random->callback(Mode1::input_answer_callback, this);
 
@@ -37,7 +38,8 @@ void Mode1::show (){
 void Mode1::reset()
 {
 	question.clear();
-	nums->value("");
+	// nums->value("");
+	for(auto box : boxs_question) box->label("");
 	input_nums->value("");
 	output_result->value("");
 
@@ -49,12 +51,10 @@ void Mode1::random_callback(Fl_Widget* widget, void* data){
 	for(int i=0; i<4; i++){
 		int num = std::rand()%13+1;
 		window->question.push_back(num);
+		//显示题目
+		window->boxs_question[i]->set_number(num);
 	}
 	window->solver.solve(window->question);
-	//显示题目
-	std::string nums_str = "";
-	for(int i=0; i<4; i++) nums_str += get_string((int)window->question[i]) + " ";
-	window->nums->value(nums_str.c_str());
 	
 	window->answer_str = window->solver.getResult();
 	// 确保可解

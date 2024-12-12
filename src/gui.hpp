@@ -35,7 +35,7 @@ static std::string get_string(int num){
 class MyButton : public Fl_Button
 {
 public:
-	MyButton(int x, int y, int w, int h, const char* label, int type=0) : Fl_Button(x, y, w, h, label)
+	MyButton(int x, int y, int w, int h, const char* label="", int type=0) : Fl_Button(x, y, w, h, label)
 	{	
 		switch(type) {
 			case 0: {
@@ -55,8 +55,28 @@ public:
 				Fl_Image* scaled_image = original_image->copy(w, h);
 				image(scaled_image); 
 			} break;
+			case 2: {
+				labelsize(42);
+				labelfont(FL_HELVETICA_BOLD);
+				box(FL_NO_BOX);
+				align(FL_ALIGN_CENTER | FL_ALIGN_IMAGE_BACKDROP);
+				Fl_PNG_Image* original_image = new Fl_PNG_Image("../images/frame.png");
+				Fl_Image* scaled_image = original_image->copy(170, 170);
+				image(scaled_image);
+			}
 			default: break;
 		}
+	}
+    int number;
+	std::string number_str;
+	void set_number(int num){
+		number=num;
+		update_label();
+	}
+	void update_label() {
+		number_str=get_string(number);
+		label(number_str.c_str());
+		redraw();
 	}
 };
 class Mode0: public Fl_Group
@@ -157,7 +177,7 @@ public:
 private:
 	Fl_Image* image;
 	Fl_Box* box_image;
-	Fl_Output* nums;
+	std::vector<MyButton*> boxs_question;
 	std::vector<float> question;
 	Fl_Button* button_random;
 	Fl_Input* input_nums;
@@ -232,7 +252,8 @@ public:
 private:
 	Fl_Image* image;
 	Fl_Box* box_image;
-	Fl_Output* nums;
+	// Fl_Output* nums;
+	std::vector<MyButton*> boxs_question;
 	std::vector<float> question;
 	Fl_Button* button_random;
 	Fl_Input* input_nums;
