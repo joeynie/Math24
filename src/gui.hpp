@@ -22,27 +22,31 @@
 
 static Fl_Color color_bg=fl_rgb_color(244,220,188);
 static Fl_Color color_button=fl_rgb_color(255,211,130);
+static Fl_Color color_protected=fl_rgb_color(230, 184, 0);
 
-static std::string get_string(int num){
+inline std::string get_string(int num){
 	if(num <= 10)return std::to_string(num);
 	else switch(num){
 		case 11: return "J";
 		case 12: return "Q";
 		case 13: return "K";
-		default: return "";
+		default: return std::to_string(num);
 	}
 }
+const std::vector<std::string> operators={"+", "-", "*", "/"};
 class MyButton : public Fl_Button
 {
 public:
-	MyButton(int x, int y, int w, int h, const char* label="", int type=0) : Fl_Button(x, y, w, h, label)
+	MyButton(int x, int y, int w, int h, const char* label="", int type=0,int index=0) : 
+		Fl_Button(x, y, w, h, label),
+		index(index)
 	{	
 		switch(type) {
 			case 0: {
 				labelsize(h/2);
 				box(FL_NO_BOX);
 				labelcolor(FL_WHITE);
-				align(FL_ALIGN_INSIDE | FL_ALIGN_IMAGE_BACKDROP);
+				align(FL_ALIGN_CENTER | FL_ALIGN_IMAGE_BACKDROP);
 				Fl_PNG_Image* original_image = new Fl_PNG_Image("../images/button.png");
 				Fl_Image* scaled_image = original_image->copy(w*1.5, h*1.5);
 				image(scaled_image); 
@@ -50,25 +54,26 @@ public:
 			case 1: {
 				box(FL_NO_BOX);
 				labelcolor(FL_WHITE);
-				align(FL_ALIGN_INSIDE | FL_ALIGN_IMAGE_BACKDROP);
+				align(FL_ALIGN_CENTER | FL_ALIGN_IMAGE_BACKDROP);
 				Fl_PNG_Image* original_image = new Fl_PNG_Image("../images/continue.png");
 				Fl_Image* scaled_image = original_image->copy(w, h);
 				image(scaled_image); 
 			} break;
 			case 2: {
-				labelsize(42);
+				labelsize(h/2-5);
 				labelfont(FL_HELVETICA_BOLD);
 				box(FL_NO_BOX);
 				align(FL_ALIGN_CENTER | FL_ALIGN_IMAGE_BACKDROP);
 				Fl_PNG_Image* original_image = new Fl_PNG_Image("../images/frame.png");
-				Fl_Image* scaled_image = original_image->copy(170, 170);
+				Fl_Image* scaled_image = original_image->copy(w, h);
 				image(scaled_image);
 			}
 			default: break;
 		}
 	}
-    int number;
+    int number, index;
 	std::string number_str;
+	bool is_used = false;
 	void set_number(int num){
 		number=num;
 		update_label();
@@ -77,6 +82,16 @@ public:
 		number_str=get_string(number);
 		label(number_str.c_str());
 		redraw();
+	}
+	void clear_label() {
+		number = 0;
+		number_str="";
+		label("");
+		redraw();
+	}
+	void set_protect(bool protect){
+		if(protect)labelcolor(color_protected);
+		else labelcolor(FL_BLACK);
 	}
 };
 class Mode0: public Fl_Group
@@ -214,6 +229,7 @@ public:
 		if(is_running) {
 			time_left = 0;
 			is_running=true;
+			Fl::remove_timeout(count_callback, this);
 			Fl::add_timeout(1, count_callback, this);
 		}
 		else Fl::remove_timeout(count_callback, this);
@@ -242,6 +258,7 @@ public:
 		init();
 		hide();
 	}
+	void show();
 	void init();
 	void reset();
 	static void start_callback(Fl_Widget* widget, void* data);	
@@ -269,6 +286,195 @@ private:
 	Fl_Button* button_start;
 	CountUp *countup;
 };
+class Mode3: public Fl_Group
+{
+public:
+	Mode3(int x, int y, int w, int h) : Fl_Group(x, y, w, h)
+	{
+		init();
+		hide();
+	}
+	void show();
+	void init();
+	void reset();
+	static void start_callback(Fl_Widget* widget, void* data);	
+	static void random_callback(Fl_Widget* widget, void* data);
+	static void show_answer_callback(void* data);
+	static void select_number_callback(Fl_Widget* widget, void* data);
+	static void select_operator_callback(Fl_Widget* widget, void* data);
+	static void reset_callback(Fl_Widget* widget, void* data);
+	static void swap_callback(Fl_Widget* widget, void* data);
+	class Merge{
+	public:
+		Merge() {reset();}
+		void reset(){
+			num1=0; num2=0; op=-1; id1=-1; id2=-1; merge_cnt=0;
+			num3=0; num4=0; 
+		}
+		int num1, num2, op;
+		int num3, num4;
+		int id1, id2;
+		int merge_cnt;
+		float merge(int flag = 0){
+			if(flag == 0){
+				switch(op){
+					case 0: return num1+num2;
+					case 1: return num1-num2;
+					case 2: return num1*num2;
+					case 3: return (float)num1/num2;
+					default: return 0;
+				};
+			} else {
+				switch(op){
+					case 0: return num3+num4;
+					case 1: return num3-num4;
+					case 2: return num3*num4;
+					case 3: return (float)num3/num4;
+					default: return 0;
+				};
+			}
+		}
+	};
+	void cal_merge(){
+		float ans = merge.merge(0);
+		// std::cout << "ans: " << ans <<"  id2  "<<merge.id2 << std::endl;
+		boxs_question[merge.id2]->set_number(ans); 
+		boxs_question[merge.id1]->label("");	
+		// add parrallel
+		float ans2 = merge.merge(1);
+		boxs_question[merge.id2+4]->set_number(ans2);
+		boxs_question[merge.id1+4]->label("");	
+
+		merge.id1 = merge.id2;
+		merge.num1 = ans;								
+		merge.id2 = -1;
+		merge.num2 = -1;
+		merge.op = -1;
+		merge.merge_cnt ++;
+		// add parrallel
+		merge.num3 = ans2;
+		merge.num4 = -1;
+		if(merge.merge_cnt == 3){
+			if(std::abs(ans - solver.goal)<1e-6 && std::abs(ans2 - solver.goal)<1e-6){
+				output_result->value("Correct!");
+				logger.log(" Correct!");
+				button_next->show();
+			}
+			else{
+				output_result->value("Incorrect.");
+				logger.log("Incorrect.");
+			}
+		}
+	}
+private:
+	Fl_Image* image;
+	Fl_Box* box_image;
+	// Fl_Output* nums;
+	std::vector<MyButton*> boxs_question;
+	Merge merge;
+	std::vector<MyButton*> boxs_operator;
+	std::vector<float> question,question2;
+	Fl_Button* button_random;
+	// Fl_Input* input_nums;
+	Fl_Button* button_next;
+	std::string answer_str, answer_str2;
+	Fl_Output* output_result;
+	Fl_Button* button_reset;
+	Fl_Button* button_swap;
+	bool is_swap=false;
+
+	Solver solver;
+	Logger& logger=Logger::getInstance();
+
+	int round , total_time;
+	const int MAX_ROUND=10;
+	Fl_Button* button_start;
+	CountUp *countup;
+};
+
+class Mode4: public Fl_Group
+{
+public:
+	Mode4(int x, int y, int w, int h) : Fl_Group(x, y, w, h)
+	{
+		init();
+		hide();
+	}
+	void show();
+	void init();
+	void reset();
+	static void start_callback(Fl_Widget* widget, void* data);	
+	static void random_callback(Fl_Widget* widget, void* data);
+	static void show_answer_callback(void* data);
+	static void select_number_callback(Fl_Widget* widget, void* data);
+	static void select_operator_callback(Fl_Widget* widget, void* data);
+	static void reset_callback(Fl_Widget* widget, void* data);
+	static void swap_callback(Fl_Widget* widget, void* data);
+	static void revert_callback(Fl_Widget* widget, void* data);
+	class Merge{
+	public:
+		Merge() {reset();}
+		void reset(){
+			num1=0; num2=0; op=-1; id1=-1; id2=-1; merge_cnt=0;
+		}
+		int num1, num2, op;
+		int id1, id2;
+		int merge_cnt;
+		float merge(int flag = 0){
+				switch(op){
+					case 0: return num1+num2;
+					case 1: return num1-num2;
+					case 2: return num1*num2;
+					case 3: return (float)num1/num2;
+					default: return 0;
+				};
+		}
+	};
+	void cal_merge();
+	void revert_to(int index){
+		for(int i=0;i<4;i++)
+			if(protects[i]) continue;
+			else if(!history_boxs[index][i].first){
+				boxs_question[i]->is_used = false;
+				boxs_question[i]->set_number(history_boxs[index][i].second);
+			}
+			else boxs_question[i]->clear_label();
+		
+	}
+	void record(){
+		std::vector<std::pair<bool,float>> current_boxs;
+		for(auto&& box: boxs_question)
+			current_boxs.push_back(std::make_pair(box->is_used,box->number));
+		history_boxs.emplace_back(current_boxs);
+	}	
+private:
+	Fl_Image* image;
+	Fl_Box* box_image;
+	std::vector<MyButton*> boxs_question;
+	std::vector<MyButton*> boxs_operator;
+	Merge merge;
+	std::vector<float> question;
+	Fl_Button* button_random;
+	// Fl_Input* input_nums;
+	Fl_Button* button_next;
+	std::string answer_str;
+	Fl_Output* output_result;
+	Fl_Button* button_reset;
+	Fl_Button* button_swap;
+	bool is_swap=false;
+	Fl_Button* button_revert;
+	std::vector<std::vector<std::pair<bool,float>>> history_boxs;
+	std::vector<bool> protects;
+
+	Solver solver;
+	Logger& logger=Logger::getInstance();
+
+	int round , total_time;
+	const int MAX_ROUND=10;
+	Fl_Button* button_start;
+	CountUp *countup;
+};
+
 
 class LogPanel: public Fl_Group
 {

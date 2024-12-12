@@ -19,22 +19,27 @@ void Mode2::init()
 	for(int i = 0; i < 4; i++){
 		boxs_question.emplace_back(new MyButton(80+i%2*w()/3, 150 + i/2 * 150, 170, 170,"",2));
 	}
-	button_random = new MyButton(w()/2-100,h()/2+70, 200, 30, "Check answer");
+	button_random = new MyButton(w()/2-100,h()/2+90, 200, 30, "Check answer");
 	button_random->callback(Mode2::input_answer_callback, this);
 
-	input_nums = new Fl_Input(w()/2-100,h()/2+30, 200, 30, "Your answer:");
+	input_nums = new Fl_Input(w()/2-100,h()/2+50, 200, 30, "Your answer:");
 	input_nums->textsize(20);
 	input_nums->callback(Mode2::input_answer_callback, this);
 	input_nums->when(FL_WHEN_ENTER_KEY);
-	button_next = new MyButton(w()/2+110,h()/2+20, 50, 50, "",1);
+	button_next = new MyButton(w()/2+110,h()/2+30, 50, 50, "",1);
 	button_next->callback(Mode2::random_callback, this);
 	button_next->hide();
 
 
-	output_result = new Fl_Output(w()/2-100,h()/2+110, 200, 30, "Result:");
+	output_result = new Fl_Output(w()/2-100,h()/2+130, 200, 30, "Result:");
 	output_result->textfont(FL_HELVETICA_BOLD);
 	output_result->textsize(20);
 	end();
+}
+void Mode2::show (){
+	Fl_Group::show();
+	countup ->set_timer(false);
+	reset();
 }
 void Mode2::start_callback(Fl_Widget* widget, void* data){
 	Mode2* mode = (Mode2*)data;
@@ -47,7 +52,7 @@ void Mode2::reset()
 	round = 1;
 	question.clear();
 	// nums->value("");
-	for(auto box : boxs_question) box->label("");
+	for(auto box : boxs_question) box->clear_label();
 	input_nums->value("");
 	output_result->value("");
 

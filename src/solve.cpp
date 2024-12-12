@@ -43,7 +43,7 @@ void Solver::solve(std::vector<float>& nums,std::vector<std::string>& expression
                 if(next.size() == 1){
                     if(std::abs(next[0] - goal) < 1e-6){
                         results.emplace_back(next_exp[0]);
-                        get_time();
+                        // get_time();
                     }
                 }
                 if(next.size() > 1) solve(next,next_exp);

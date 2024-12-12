@@ -58,6 +58,8 @@ void MyWindow::init()
 	modes.emplace_back(new Mode0(0,0,w(),h()));
 	modes.emplace_back(new Mode1(0,0,w(),h()));
 	modes.emplace_back(new Mode2(0,0,w(),h()));
+	modes.emplace_back(new Mode3(0,0,w(),h()));
+	modes.emplace_back(new Mode4(0,0,w(),h()));
 	modes.emplace_back(new LogPanel(0,0,w(),h()));
 
 	menu = new Fl_Menu_Window(0, 0, w(), h()-50);
@@ -77,7 +79,9 @@ void MyWindow::init()
 	choose_mode.emplace_back(new MyButton(w()/2-ww/2, h()/2+0*50, ww, hh, "人机解题"));
 	choose_mode.emplace_back(new MyButton(w()/2-ww/2, h()/2+1*50, ww, hh, "限时挑战"));
 	choose_mode.emplace_back(new MyButton(w()/2-ww/2, h()/2+2*50, ww, hh, "竞速挑战"));
-	choose_mode.emplace_back(new MyButton(w()/2-ww/2, h()/2+3*50, ww, hh, "日志"));
+	choose_mode.emplace_back(new MyButton(w()/2-ww/2, h()/2+3*50, ww, hh, "平行世界"));
+	choose_mode.emplace_back(new MyButton(w()/2-ww/2, h()/2+4*50, ww, hh, "时间回溯"));
+	choose_mode.emplace_back(new MyButton(w()/2-ww/2, h()/2+5*50, ww, hh, "日志"));
 	for(auto mode : choose_mode)	mode->callback(MyWindow::choose_mode_callback, this);	
 
 	menu->end();
@@ -94,7 +98,9 @@ std::unordered_map<std::string, int> MyWindow::button_names = {
 	{"人机解题",0},
 	{"限时挑战",1},
 	{"竞速挑战",2},
-	{"日志",3}
+	{"平行世界",3},
+	{"时间回溯",4},
+	{"日志",5}
 };
 void MyWindow::choose_mode_callback(Fl_Widget* widget, void* data)
 {
