@@ -19,6 +19,7 @@
 #include <vector>
 #include "FL/Fl_PNG_Image.H"
 #include "FL/Fl_JPEG_Image.H"
+#include "Fl/Fl_File_Chooser.H"
 
 static Fl_Color color_bg=fl_rgb_color(244,220,188);
 static Fl_Color color_button=fl_rgb_color(255,211,130);
@@ -105,7 +106,7 @@ public:
 	void init();
 
 	static void solve_callback(Fl_Widget* widget, void* data);
-
+	static void load_file_callback(Fl_Widget* widget, void* data);
 private:
 	Fl_Image* image;
 	Fl_Box* box_image;
@@ -113,6 +114,7 @@ private:
 	Fl_Button* button_solve;
 	Fl_Output* output_result;
 	Fl_Text_Display* log_display;
+	Fl_Button* button_load_file;
 
 	Solver solver;
 	Logger& logger=Logger::getInstance();

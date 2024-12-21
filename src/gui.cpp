@@ -1,51 +1,5 @@
 #include "gui.hpp"
 
-//玩家出题
-void Mode0::init()
-{
-	begin();
-	image = new Fl_PNG_Image("../images/nap.png");
-	box_image = new Fl_Box(10,10,image->w(),image->h());
-	box_image->box(FL_NO_BOX);
-	box_image->image(image);
-
-	input_nums = new Fl_Input(w()/2-100,h()/2-100, 200, 50, "4 numbers:");
-	input_nums->textsize(30);
-
-	output_result = new Fl_Output(w()/2-100,h()/2-40, 200, 50, "Result:");
-	output_result->textfont(FL_HELVETICA_BOLD);
-	output_result->textsize(24);
-	button_solve = new MyButton(w()/2-100,h()/2+20, 200, 50, "Solve");
-	button_solve->callback(Mode0::solve_callback, this);
-
-	end();
-}
-
-void Mode0::solve_callback(Fl_Widget* widget, void* data){
-	Mode0* window = (Mode0*)data;
-	window->output_result->value("Solving...");
-	std::string input_str = window->input_nums->value();
-	std::vector<float> nums;
-	std::stringstream ss(input_str);
-	std::string str;
-	while(getline(ss, str, ' ')){
-		try{
-			float num = std::stof(str);
-			nums.push_back(num);
-		}
-		catch(const std::exception& e){
-			window->logger.log(std::string(e.what()), LogLevel::ERROR);
-		}
-	}
-	if(nums.size() != 4){
-		window->output_result->value("Error: Please enter 4 numbers separated by space.");
-		window->logger.log("Error: Please enter 4 numbers separated by space.", LogLevel::ERROR);
-		return;
-	}
-	window->solver.solve(nums);
-	std::string result = window->solver.getResult();
-	window->output_result->value(result.c_str());
-}
 
 void MyWindow::init()
 {
